@@ -74,11 +74,9 @@ namespace GayASSUnityGUITemp
 
         //Only mess with if you know what you're doing
         #region Ignore
-        private static HttpClient client = new HttpClient();
-        public async void Awake()
+        public void Awake()
         {
             Logger.LogInfo("OnGui Menu Loaded!");
-            await DownloadUnityExplorer();
 
             // **Button Style**
             bs = new GUIStyle()
@@ -149,41 +147,7 @@ namespace GayASSUnityGUITemp
                 normal = { background = maketexture(2, 2, stnormal) }
             };
         }
-
-        private static async Task DownloadUnityExplorer()
-        {
-            if (IsMono)
-            {
-                await DownloadFile("https://raw.githubusercontent.com/galaxizsum/OnGuiDownloadShit/main/UnityExplorer.BIE5.Mono.dll", "UnityExplorer.BIE5.Mono.dll");
-                await DownloadFile("https://raw.githubusercontent.com/galaxizsum/OnGuiDownloadShit/main/UniverseLib.Mono.dll", "UniverseLib.Mono.dll");
-            }
-            else if (IsIl2cpp)
-            {
-                await DownloadFile("https://raw.githubusercontent.com/galaxizsum/OnGuiDownloadShit/main/UnityExplorer.BIE.IL2CPP.dll", "UnityExplorer.BIE.IL2CPP.dll");
-                await DownloadFile("https://raw.githubusercontent.com/galaxizsum/OnGuiDownloadShit/main/UniverseLib.IL2CPP.Unhollower.dll", "UniverseLib.IL2CPP.Unhollower.dll");
-            }
-        }
-
-        private static async Task DownloadFile(string url, string name)
-        {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BepInEx", "Plugins", name);
-
-            if (File.Exists(path))
-            {
-                return;
-            }
-
-            try
-            {
-                byte[] bytes = await client.GetByteArrayAsync(url);
-                File.WriteAllBytes(path, bytes);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(ex.Message);
-            }
-        }
-
+        
         private Texture2D maketexture(int width, int height, Color color)
         {
             Color[] pixels = new Color[width * height];
