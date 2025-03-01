@@ -25,7 +25,6 @@ namespace GayASSUnityGUITemp
         private GUIStyle tas;
         private GUIStyle ss;
         private GUIStyle sts;
-        private GUIStyle ws;
         private string stupidassmenunameshit = "<color=" + MenuNameColor + ">" + MenuName + "</color>";
         private int toolbr = 0;
         #endregion
