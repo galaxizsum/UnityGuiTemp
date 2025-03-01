@@ -16,10 +16,6 @@ namespace GayASSUnityGUITemp
     //This shitty ass temp was made by galaxizs you nigger
     public class GalaxizsTemp : BaseUnityPlugin
     {
-        /// Please answer these! !! ! ! !  !
-        private static bool IsIl2cpp = false;
-        private static bool IsMono = true;
-
         #region wrdisbond
         private bool IsOn = false;
         private Rect rect = new Rect(100, 100, 700, 400);
