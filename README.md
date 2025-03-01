@@ -6,3 +6,6 @@
 <p>-> Comes with a Storbe mod for the menu buttons.</p>
 <p>-> Full customization.</p>
 <p>-> No support so figure it out yourself </p>
+<p>------------------------------------------------</p>
+<p>This is my LAST project for modding</p>
+<p>So stop asking me for shit ssnigger</p>
